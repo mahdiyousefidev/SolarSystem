@@ -1,4 +1,7 @@
-﻿namespace SolarSystem.Domain.Base
+﻿using SolarSystem.Framework;
+using SolarSystem.Domain.Exceptions;
+
+namespace SolarSystem.Domain.Base
 {
     public abstract class CelestialBody
     {
