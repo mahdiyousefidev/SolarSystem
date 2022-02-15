@@ -7,6 +7,7 @@ namespace SolarSystem.Domain
     {
         public Venus(string name = "Venus", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
+            ChangeOrbitalPeriod(new Period(225, new PeriodUnit("days")));
 
         }
 

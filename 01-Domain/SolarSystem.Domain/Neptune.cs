@@ -7,6 +7,7 @@ namespace SolarSystem.Domain
     {
         public Neptune(string name = "Neptune", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
+            ChangeOrbitalPeriod(new Period(165, new PeriodUnit("years")));
 
         }
 

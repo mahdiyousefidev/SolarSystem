@@ -2,13 +2,18 @@
 {
     public class Mass
     {
-        public Mass(long weight, MassUnit unit)
+        public Mass(double weight, MassUnit unit)
         {
             Weight = weight;
             Unit = unit;
         }
 
-        public long Weight { get; set; }
-        public MassUnit Unit { get; set; }
+        public double Weight { get; private set; }
+        public MassUnit Unit { get; private set; }
+
+        public override string ToString()
+        {
+            return $"{Weight} {Unit.BaseValue}^{Unit.Power} {Unit.Title}";
+        }
     }
 }

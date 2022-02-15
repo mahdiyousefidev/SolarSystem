@@ -11,5 +11,9 @@
         public long Length { get; set; }
         public DistanceUnit Unit { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Length} {Unit.Title}";
+        }
     }
 }

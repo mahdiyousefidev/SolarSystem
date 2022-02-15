@@ -7,6 +7,7 @@ namespace SolarSystem.Domain
     {
         public Pluto(string name = "Pluto", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
+            ChangeOrbitalPeriod(new Period(248, new PeriodUnit("years")));
 
         }
 

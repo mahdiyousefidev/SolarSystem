@@ -7,6 +7,7 @@ namespace SolarSystem.Domain
     {
         public Saturn(string name = "Saturn", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
+            ChangeOrbitalPeriod(new Period(29, new PeriodUnit("years")));
 
         }
 

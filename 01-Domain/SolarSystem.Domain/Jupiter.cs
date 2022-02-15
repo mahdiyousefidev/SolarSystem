@@ -7,7 +7,7 @@ namespace SolarSystem.Domain
     {
         public Jupiter(string name = "Jupiter", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
-
+            ChangeOrbitalPeriod(new Period(12, new PeriodUnit("years")));
         }
 
         public override bool CanBeTerraformed()

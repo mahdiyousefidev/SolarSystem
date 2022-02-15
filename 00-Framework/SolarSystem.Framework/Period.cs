@@ -10,5 +10,15 @@
 
         public long Value { get; set; }
         public PeriodUnit Unit { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Value} {Unit.Title}";
+        }
+
+        public long GetValue()
+        {
+            return Value * Unit.ToDay();
+        }
     }
 }
