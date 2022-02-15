@@ -7,10 +7,6 @@ namespace SolarSystem.Domain.Base
     {
         #region Constructors
 
-        protected CelestialBody()
-        {
-
-        }
         public CelestialBody(string name, string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null)
         {
             ChangeName(name);
@@ -23,19 +19,21 @@ namespace SolarSystem.Domain.Base
                 ChangeOrbitalPeriod(orbitalPeriod);
             if (distanceFromTheOrbitingCenter != null)
                 ChangeDistanceFromTheOrbitingCenter(distanceFromTheOrbitingCenter);
+            _satelliteMoons = new List<CelestialBody>();
         }
 
         #endregion
 
         #region Properties
 
-        public string Name { get; protected set; }
-        public string Picture { get; protected set; }
-        public Mass Mass { get; protected set; }
-        public Period OrbitalPeriod { get; protected set; }
-        public CelestialBody OrbitingCenter { get; protected set; }
-        public Distance DistanceFromTheOrbitingCenter { get; protected set; }
-        public List<CelestialBody> SatelliteMoons { get; protected set; }
+        public string Name { get; private set; }
+        public string Picture { get; private set; }
+        public Mass Mass { get; private set; }
+        public Period OrbitalPeriod { get; private set; }
+        public CelestialBody OrbitingCenter { get; private set; }
+        public Distance DistanceFromTheOrbitingCenter { get; private set; }
+        private List<CelestialBody> _satelliteMoons { get; set; }
+        public IReadOnlyList<CelestialBody> SatelliteMoons => _satelliteMoons.AsReadOnly();
 
         #endregion
 
@@ -159,20 +157,30 @@ namespace SolarSystem.Domain.Base
         {
             GuardAgainstNullSatelliteMoon(moon);
             GuardAgainstExistSatelliteMoon(moon);
-            SatelliteMoons.Add(moon);
+            _satelliteMoons.Add(moon);
         }
         public void RemoveSatelliteMoon(CelestialBody moon)
         {
             GuardAgainstNotExistSatelliteMoon(moon);
-            SatelliteMoons.Remove(moon);
+            _satelliteMoons.Remove(moon);
         }
+
+        public List<CelestialBody> GetAll()
+        {
+            return SatelliteMoons.OrderBy(m => m.OrbitalPeriod.Value).ToList();
+        }
+
+        public bool HasSatelliteMoon()
+        {
+            return SatelliteMoons.Any();
+        }
+
         #endregion
 
         #region Abstract methods
 
         public abstract bool CanSustainLife();
         public abstract bool CanBeTerraformed();
-        public abstract bool HasSatelliteMoon();
 
         #endregion
     }
