@@ -8,7 +8,7 @@
             Unit = unit;
         }
 
-        public long Value { get; set; }
+        private long Value { get; set; }
         public PeriodUnit Unit { get; set; }
 
         public override string ToString()
