@@ -7,18 +7,18 @@ namespace SolarSystem.Domain
     {
         public Venus(string name = "Venus", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
-            ChangeOrbitalPeriod(new Period(225, new PeriodUnit("days")));
+            ChangeOrbitalPeriod(new Period(225, new PeriodUnit(PeriodUnitType.day)));
 
         }
 
         public override bool CanBeTerraformed()
         {
-            return true;
+            return GetType().IsSubclassOf(typeof(TerrestrialPlanet));
         }
 
         public override bool CanSustainLife()
         {
-            return false;
+            return GetType().Equals(typeof(Earth));
         }
     }
 }

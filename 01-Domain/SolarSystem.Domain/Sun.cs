@@ -7,26 +7,26 @@ namespace SolarSystem.Domain
     {
         public Sun(string name = "Sun", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
-            AddSatelliteMoon(new Mercury());
-            AddSatelliteMoon(new Venus());
-            AddSatelliteMoon(new Earth());
-            AddSatelliteMoon(new Mars());
-            AddSatelliteMoon(new Jupiter());
-            AddSatelliteMoon(new Saturn());
-            AddSatelliteMoon(new Uranus());
-            AddSatelliteMoon(new Neptune());
-            AddSatelliteMoon(new Ceres());
-            AddSatelliteMoon(new Pluto());
+            AddSatellite(new Mercury());
+            AddSatellite(new Venus());
+            AddSatellite(new Earth());
+            AddSatellite(new Mars());
+            AddSatellite(new Jupiter());
+            AddSatellite(new Saturn());
+            AddSatellite(new Uranus());
+            AddSatellite(new Neptune());
+            AddSatellite(new Ceres());
+            AddSatellite(new Pluto());
         }
 
         public override bool CanBeTerraformed()
         {
-            return false;
+            return GetType().IsSubclassOf(typeof(TerrestrialPlanet));
         }
 
         public override bool CanSustainLife()
         {
-            return false;
+            return GetType().Equals(typeof(Earth));
         }
     }
 }

@@ -2,16 +2,17 @@
 {
     public class MassUnit
     {
-        public MassUnit(int baseValue, int power, string title )
+        public MassUnit(int baseValue, int power, MassUnitType type )
         {
             BaseValue = baseValue;
             Power = power;
-            Title = title;
+            Type = type;
         }
         public int Power { get; private set; }
         public int BaseValue { get; private set; }
-        public string Title { get; private set; }
+        public MassUnitType Type { get; private set; }
 
         // todo and the measure property
+        
     }
 }

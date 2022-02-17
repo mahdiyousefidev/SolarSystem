@@ -2,11 +2,11 @@
 {
     public class DistanceUnit
     {
-        public DistanceUnit(string title)
+        public DistanceUnit(DistanceUnitType type)
         {
-            Title = title;
+            Type = type;
         }
-        public string Title { get; set; }
+        public DistanceUnitType Type { get; set; }
         // todo and the measure property
     }
 }

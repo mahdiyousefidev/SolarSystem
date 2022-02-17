@@ -7,18 +7,18 @@ namespace SolarSystem.Domain
     {
         public Pluto(string name = "Pluto", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
-            ChangeOrbitalPeriod(new Period(248, new PeriodUnit("years")));
+            ChangeOrbitalPeriod(new Period(248, new PeriodUnit(PeriodUnitType.year)));
 
         }
 
         public override bool CanBeTerraformed()
         {
-            return false;
+            return GetType().IsSubclassOf(typeof(TerrestrialPlanet));
         }
 
         public override bool CanSustainLife()
         {
-            return false;
+            return GetType().Equals(typeof(Earth));
         }
     }
 }

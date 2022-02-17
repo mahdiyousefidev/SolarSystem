@@ -9,16 +9,16 @@
         }
 
         private long Value { get; set; }
-        public PeriodUnit Unit { get; set; }
+        private PeriodUnit Unit { get; set; }
 
         public override string ToString()
         {
-            return $"{Value} {Unit.Title}";
+            return $"{Value} {Unit.Type}";
         }
 
         public long GetValue()
         {
-            return Value * Unit.ToDay();
+            return Value * Unit.DayCount();
         }
     }
 }

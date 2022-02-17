@@ -1,8 +1,8 @@
 ﻿namespace SolarSystem.Domain.Exceptions
 {
-    public class NullSatelliteMoonException : Exception
+    public class NullSatelliteException : Exception
     {
-        public NullSatelliteMoonException(string message = "Satellite moon could not be null") : base(message)
+        public NullSatelliteException(string message = "Satellite could not be null") : base(message)
         {
 
         }

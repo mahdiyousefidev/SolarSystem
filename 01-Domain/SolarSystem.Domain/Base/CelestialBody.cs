@@ -19,7 +19,7 @@ namespace SolarSystem.Domain.Base
                 ChangeOrbitalPeriod(orbitalPeriod);
             if (distanceFromTheOrbitingCenter != null)
                 ChangeDistanceFromTheOrbitingCenter(distanceFromTheOrbitingCenter);
-            _satelliteMoons = new List<CelestialBody>();
+            _satellites = new List<CelestialBody>();
         }
 
         #endregion
@@ -32,8 +32,8 @@ namespace SolarSystem.Domain.Base
         public Period OrbitalPeriod { get; private set; }
         public CelestialBody OrbitingCenter { get; private set; }
         public Distance DistanceFromTheOrbitingCenter { get; private set; }
-        private List<CelestialBody> _satelliteMoons { get; set; }
-        public IReadOnlyList<CelestialBody> SatelliteMoons => _satelliteMoons.AsReadOnly();
+        private List<CelestialBody> _satellites { get; set; }
+        public IReadOnlyList<CelestialBody> Satellites => _satellites.AsReadOnly();
 
         #endregion
 
@@ -47,7 +47,7 @@ namespace SolarSystem.Domain.Base
 
         private void GuardAgainstNegativeDistance(Distance distance)
         {
-            if (distance.Length < 0)
+            if (distance.GetValue() < 0)
                 throw new NegativePeriodException();
         }
 
@@ -65,7 +65,7 @@ namespace SolarSystem.Domain.Base
 
         private static void GuardAgainstNegativePeriod(Period? period)
         {
-            if (period.Value < 0)
+            if (period.GetValue() < 0)
                 throw new NegativePeriodException();
         }
 
@@ -77,7 +77,7 @@ namespace SolarSystem.Domain.Base
 
         private void GuardAgainstNegativeMass(Mass? mass)
         {
-            if (mass.Weight < 0)
+            if (mass.GetValue() < 0)
                 throw new NegativeMassException();
         }
 
@@ -101,23 +101,23 @@ namespace SolarSystem.Domain.Base
                 throw new PictureNotExistException();
         }
 
-        private void GuardAgainstExistSatelliteMoon(CelestialBody moon)
+        private void GuardAgainstExistSatellite(CelestialBody satellite)
         {
-            var found = SatelliteMoons.FirstOrDefault(m => m == moon);
+            var found = Satellites.FirstOrDefault(m => m == satellite);
             if (found != null)
-                throw new SatelliteMoonExistException();
+                throw new SatelliteExistException();
         }
-        private void GuardAgainstNotExistSatelliteMoon(CelestialBody moon)
+        private void GuardAgainstNotExistSatellite(CelestialBody satellite)
         {
-            var found = SatelliteMoons.FirstOrDefault(m => m == moon);
+            var found = Satellites.FirstOrDefault(m => m == satellite);
             if (found == null)
-                throw new SatelliteMoonNotExistException();
+                throw new SatelliteNotExistException();
         }
 
-        private void GuardAgainstNullSatelliteMoon(CelestialBody moon)
+        private void GuardAgainstNullSatellite(CelestialBody satellite)
         {
-            if (moon == null)
-                throw new NullSatelliteMoonException();
+            if (satellite == null)
+                throw new NullSatelliteException();
         }
         #endregion
 
@@ -153,26 +153,26 @@ namespace SolarSystem.Domain.Base
             GuardAgainstPictureNotExist(picture);
             Picture = picture;
         }
-        public void AddSatelliteMoon(CelestialBody moon)
+        public void AddSatellite(CelestialBody satellite)
         {
-            GuardAgainstNullSatelliteMoon(moon);
-            GuardAgainstExistSatelliteMoon(moon);
-            _satelliteMoons.Add(moon);
+            GuardAgainstNullSatellite(satellite);
+            GuardAgainstExistSatellite(satellite);
+            _satellites.Add(satellite);
         }
-        public void RemoveSatelliteMoon(CelestialBody moon)
+        public void RemoveSatellite(CelestialBody satellite)
         {
-            GuardAgainstNotExistSatelliteMoon(moon);
-            _satelliteMoons.Remove(moon);
+            GuardAgainstNotExistSatellite(satellite);
+            _satellites.Remove(satellite);
         }
 
         public List<CelestialBody> GetAll()
         {
-            return SatelliteMoons.OrderBy(m => m.OrbitalPeriod.Value).ToList();
+            return Satellites.OrderBy(m => m.OrbitalPeriod.GetValue()).ToList();
         }
 
         public bool HasSatelliteMoon()
         {
-            return SatelliteMoons.Any();
+            return Satellites.Any();
         }
 
         #endregion

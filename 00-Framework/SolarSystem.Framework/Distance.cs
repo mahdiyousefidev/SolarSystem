@@ -8,12 +8,17 @@
             Unit = unit;
         }
 
-        public long Length { get; set; }
-        public DistanceUnit Unit { get; set; }
+        private long Length { get; set; }
+        private DistanceUnit Unit { get; set; }
 
         public override string ToString()
         {
-            return $"{Length} {Unit.Title}";
+            return $"{Length} {Unit.Type}";
+        }
+
+        public long GetValue()
+        {
+            return Length;
         }
     }
 }

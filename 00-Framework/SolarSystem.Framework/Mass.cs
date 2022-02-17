@@ -8,12 +8,17 @@
             Unit = unit;
         }
 
-        public double Weight { get; private set; }
-        public MassUnit Unit { get; private set; }
+        private double Weight { get; set; }
+        private MassUnit Unit { get; set; }
 
         public override string ToString()
         {
-            return $"{Weight} {Unit.BaseValue}^{Unit.Power} {Unit.Title}";
+            return $"{Weight} {Unit.BaseValue}^{Unit.Power} {Unit.Type}";
+        }
+
+        public double GetValue()
+        {
+            return Math.Floor(Math.Pow(Unit.BaseValue, Unit.Power) * Weight);
         }
     }
 }

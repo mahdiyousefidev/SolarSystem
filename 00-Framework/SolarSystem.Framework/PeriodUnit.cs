@@ -2,29 +2,16 @@
 {
     public class PeriodUnit
     {
-        public PeriodUnit(string title)
+        public PeriodUnit(PeriodUnitType type)
         {
-            Title = title;
+            Type = type;
         }
-        public string Title { get; set; }
+        public PeriodUnitType Type { get; set; }
         // todo and the measure property
 
-        public int ToDay()
+        public int DayCount()
         {
-            switch (Title)
-            {
-                case "days":
-                    return 1;
-
-                case "months":
-                    return 30;
-
-                case "years":
-                    return 365;
-                default:
-                    return -1;
-                    break;
-            }
+            return (int)Type;
         }
     }
 }
