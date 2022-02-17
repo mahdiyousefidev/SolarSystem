@@ -1,4 +1,5 @@
 ﻿using SolarSystem.Domain.Base;
+using SolarSystem.Domain.Infrastructures;
 using SolarSystem.Framework;
 
 namespace SolarSystem.Domain
@@ -17,6 +18,7 @@ namespace SolarSystem.Domain
             AddSatellite(new Uranus());
             AddSatellite(new Neptune());
             AddSatellite(new Pluto());
+            this.Colonize();
         }
 
         public override bool CanBeTerraformed()

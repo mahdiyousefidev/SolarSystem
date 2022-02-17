@@ -152,7 +152,5 @@ namespace SolarSystem.Domain.Test
             var planet = new Pluto();
             Assert.False(planet.CanSustainLife());
         }
-
-
     }
 }

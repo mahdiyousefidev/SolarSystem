@@ -1,4 +1,5 @@
 ﻿using SolarSystem.Domain.Base;
+using SolarSystem.Domain.Infrastructures;
 using SolarSystem.Framework;
 
 namespace SolarSystem.Domain
@@ -8,7 +9,7 @@ namespace SolarSystem.Domain
         public Saturn(string name = "Saturn", string picture = "", Mass? mass = null, Period? orbitalPeriod = null, Distance? distanceFromTheOrbitingCenter = null) : base(name, picture, mass, orbitalPeriod, distanceFromTheOrbitingCenter)
         {
             ChangeOrbitalPeriod(new Period(29, new PeriodUnit(PeriodUnitType.year)));
-
+            this.Colonize();
         }
 
         public override bool CanBeTerraformed()
