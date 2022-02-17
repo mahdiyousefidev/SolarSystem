@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Domain", "01-Domain", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarSystem.Domain", "01-Domain\SolarSystem.Domain\SolarSystem.Domain.csproj", "{6DB57912-05A6-44D1-81A0-654657A1769F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Test", "04-Test", "{7815171A-E935-4B2F-A4C5-46F46032B1D7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Test", "02-Test", "{7815171A-E935-4B2F-A4C5-46F46032B1D7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarSystem.Framework", "00-Framework\SolarSystem.Framework\SolarSystem.Framework.csproj", "{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}"
 EndProject
