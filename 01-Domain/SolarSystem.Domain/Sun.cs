@@ -11,11 +11,11 @@ namespace SolarSystem.Domain
             AddSatellite(new Venus());
             AddSatellite(new Earth());
             AddSatellite(new Mars());
+            AddSatellite(new Ceres());
             AddSatellite(new Jupiter());
             AddSatellite(new Saturn());
             AddSatellite(new Uranus());
             AddSatellite(new Neptune());
-            AddSatellite(new Ceres());
             AddSatellite(new Pluto());
         }
 

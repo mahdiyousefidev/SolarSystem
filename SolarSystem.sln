@@ -7,25 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Framework", "00-Framewor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Domain", "01-Domain", "{B3B868C4-FE1A-4F3E-9BE3-2CE84EE3E443}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.Domain", "01-Domain\SolarSystem.Domain\SolarSystem.Domain.csproj", "{6DB57912-05A6-44D1-81A0-654657A1769F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Infrastructure", "02-Infrastructure", "{DB41ED27-0557-4C16-9B9D-AECD74DB1A02}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.Infrastructure", "02-Infrastructure\SolarSystem.Infrastructure\SolarSystem.Infrastructure.csproj", "{1B2D90E2-CED1-4E55-9C3C-88144A511F05}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Application", "03-Application", "{FF55A7CD-340A-44F6-90A2-CE40D034DB4E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.Application", "03-Application\SolarSystem.Application\SolarSystem.Application.csproj", "{B88F6473-0A2A-4852-8BCF-696A0B00C979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarSystem.Domain", "01-Domain\SolarSystem.Domain\SolarSystem.Domain.csproj", "{6DB57912-05A6-44D1-81A0-654657A1769F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Test", "04-Test", "{7815171A-E935-4B2F-A4C5-46F46032B1D7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-UserInterface", "05-UserInterface", "{BDB2613B-1DFA-4B7D-AF86-9F1A6B559D88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarSystem.Framework", "00-Framework\SolarSystem.Framework\SolarSystem.Framework.csproj", "{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.WebUI", "05-UserInterface\SolarSystem.WebUI\SolarSystem.WebUI.csproj", "{0DFDB7EA-5DD5-4586-8C79-8447372E8820}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.Framework", "00-Framework\SolarSystem.Framework\SolarSystem.Framework.csproj", "{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolarSystem.Domain.Test", "SolarSystem.Domain.Test\SolarSystem.Domain.Test.csproj", "{28B354EB-FC45-4D4D-8C47-FE528C60F9FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolarSystem.Domain.Test", "SolarSystem.Domain.Test\SolarSystem.Domain.Test.csproj", "{28B354EB-FC45-4D4D-8C47-FE528C60F9FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,18 +25,6 @@ Global
 		{6DB57912-05A6-44D1-81A0-654657A1769F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DB57912-05A6-44D1-81A0-654657A1769F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DB57912-05A6-44D1-81A0-654657A1769F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1B2D90E2-CED1-4E55-9C3C-88144A511F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B2D90E2-CED1-4E55-9C3C-88144A511F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B2D90E2-CED1-4E55-9C3C-88144A511F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B2D90E2-CED1-4E55-9C3C-88144A511F05}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B88F6473-0A2A-4852-8BCF-696A0B00C979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B88F6473-0A2A-4852-8BCF-696A0B00C979}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B88F6473-0A2A-4852-8BCF-696A0B00C979}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B88F6473-0A2A-4852-8BCF-696A0B00C979}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DFDB7EA-5DD5-4586-8C79-8447372E8820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DFDB7EA-5DD5-4586-8C79-8447372E8820}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DFDB7EA-5DD5-4586-8C79-8447372E8820}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DFDB7EA-5DD5-4586-8C79-8447372E8820}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB5F82EF-52AF-46DA-A180-E68603BEBFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,9 +39,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6DB57912-05A6-44D1-81A0-654657A1769F} = {B3B868C4-FE1A-4F3E-9BE3-2CE84EE3E443}
-		{1B2D90E2-CED1-4E55-9C3C-88144A511F05} = {DB41ED27-0557-4C16-9B9D-AECD74DB1A02}
-		{B88F6473-0A2A-4852-8BCF-696A0B00C979} = {FF55A7CD-340A-44F6-90A2-CE40D034DB4E}
-		{0DFDB7EA-5DD5-4586-8C79-8447372E8820} = {BDB2613B-1DFA-4B7D-AF86-9F1A6B559D88}
 		{EB5F82EF-52AF-46DA-A180-E68603BEBFA8} = {D74C2AA3-169B-4D5F-95C9-89AD9137CE69}
 		{28B354EB-FC45-4D4D-8C47-FE528C60F9FC} = {7815171A-E935-4B2F-A4C5-46F46032B1D7}
 	EndGlobalSection
