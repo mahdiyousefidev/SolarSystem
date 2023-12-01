@@ -4,9 +4,9 @@ namespace SolarSystem.Domain.Infrastructures
 {
     public static class Extension
     {
-        public static void Colonize(this CelestialBody celestialBody)
+        public static bool Colonize(this CelestialBody celestialBody)
         {
-
+            return celestialBody.CanBeTerraformed() && celestialBody.CanSustainLife() && celestialBody.HasSatelliteMoon();
         }
     }
 }

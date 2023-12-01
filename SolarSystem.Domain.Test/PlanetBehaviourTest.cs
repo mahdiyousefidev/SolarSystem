@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using SolarSystem.Domain.Infrastructures;
+using Xunit;
 
 namespace SolarSystem.Domain.Test
 {
@@ -151,6 +152,82 @@ namespace SolarSystem.Domain.Test
         {
             var planet = new Pluto();
             Assert.False(planet.CanSustainLife());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_sun()
+        {
+            var planet = new Sun();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_mercury()
+        {
+            var planet = new Mercury();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_venus()
+        {
+            var planet = new Venus();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_colonize_earth()
+        {
+            var planet = new Earth();
+            Assert.True(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_mars()
+        {
+            var planet = new Mars();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_ceres()
+        {
+            var planet = new Ceres();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_jupiter()
+        {
+            var planet = new Jupiter();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_saturn()
+        {
+            var planet = new Saturn();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_uranus()
+        {
+            var planet = new Uranus();
+            Assert.False(planet.Colonize());
+        }
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_neptune()
+        {
+            var planet = new Neptune();
+            Assert.False(planet.Colonize());
+        }
+
+        [Fact]
+        public void Should_retrieve_we_can_not_colonize_pluto()
+        {
+            var planet = new Pluto();
+            Assert.False(planet.Colonize());
         }
     }
 }
